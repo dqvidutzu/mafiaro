@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ffsdavid.xyz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            flex-direction: column;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(218, 12, 12, 0);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <p>loading...</p>
+  </div>
+
+  <div id="nav">
+  <h5>Mafia (RO)</h5>
+  </div>
+
+  <div id="lobby">
+    <h2>CREATE ROOM</h2>
+    <input type="number" id="maxPlayers" min="6" max="20" placeholder="players"><br>
+    <button id="createBtn">CREATE</button>
+    <h2 style="color:white">OR</h2>
+    <div id="joinroom">
+    <input type="text" id="joinCode" placeholder="code">
+    <button id="joinBtn">JOIN</button>
+    </div>
+    <h2>JOIN ROOM</h2>
+  </div>
+
+  <div id="game" style="display:none;">
+    <div id="tohide">
+    <h2>code: <span id="roomCodeDisplay"></span></h2>
+    <h3>Players:</h3>
+      </div>
+      <div id="tocenter">
+    <ul id="playersList"></ul>
+    <button id="startBtn">start</button>
+    </div>
+    <p id="yourWord"></p>
+  </div>
+
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="client.js" defer></script>
+  <script>
+    window.onload = () => {
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 1000);
+        }, 3000);
+    };
+  </script>
+</body>
+</html>
