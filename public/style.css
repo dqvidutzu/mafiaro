@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('bg.png') no-repeat center center fixed;
+    background: url('9002C019-61DC-473D-8E5D-988B5BC5BA89.png') no-repeat center center fixed;
     background-size: cover; /* makes it cover the entire viewport */
     position: relative;
     color: red;
@@ -275,4 +275,5 @@ li {
     overflow: hidden;
     display: inline-block;
     border-radius: 30px;
+
 }
