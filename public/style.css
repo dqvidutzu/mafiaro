@@ -7,7 +7,7 @@ body {
     background: url('9002C019-61DC-473D-8E5D-988B5BC5BA89.png') no-repeat center center fixed;
     background-size: cover; /* makes it cover the entire viewport */
     position: relative;
-    color: red;
+    color: rgb(184, 184, 184);
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,8 @@ button {
     cursor: pointer;
     margin-top: 20px;
     border-radius: 20px;
-    border:1px solid red;
+    border:3px solid rgb(85, 77, 55);
+    font-family: monospace;
 }
 
 input {
